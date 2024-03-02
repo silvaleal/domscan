@@ -27,7 +27,10 @@ class Domscan: # from domscan import Domscan
                 "status": False,
                 "resumo": f'{dominio} está livre no mercado.'
             }
-        return f"Invalid domain extension. (.{extensao['extensao']})"
+        return {
+                "status": False,
+                "extensao": f"Invalid domain extension. (.{extensao['extensao']})"
+            }
 
     # Verificar se a extensão é válida.
     def _extension(self, dominio):
